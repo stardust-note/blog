@@ -3,56 +3,90 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import * as Icons from 'lucide-react'
+import WaveMarquee from './WaveMarquee'
+
+import { useLayoutEffect, useRef } from "react";
+import gsap from "gsap";
+
+
 
 export default function Layout({ children }) {
   const pathname = usePathname()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const navItems = [
-    { path: '/', label: '홈', icon: Icons.Home },
-    { path: '/profile', label: '프로필', icon: Icons.User },
-    { path: '/design', label: '디자인', icon: Icons.Palette },
-    { path: '/webtoon', label: '인스타툰', icon: Icons.BookOpen },
-    { path: '/tutorial', label: '그림강좌', icon: Icons.Zap },
-    { path: '/programming', label: '프로그래밍', icon: Icons.Code },
+    { path: '/', label: 'HOME'},
+    { path: '/profile', label: 'EMOTICON'},
+    { path: '/design', label: 'ART'},
+    { path: '/webtoon', label: 'PIXEL'},
+    { path: '/tutorial', label: '3D'},
+    { path: '/programming', label: 'CODING'},
   ]
+
+  const marqueeRef = useRef(null);
+
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      const el = marqueeRef.current;
+      gsap.to(el, {
+        xPercent: -50,
+        repeat: -1,
+        duration: 40,
+        ease: "none",
+        modifiers: {
+          xPercent: gsap.utils.wrap(-50, 0),
+        },
+      });
+    }, marqueeRef);
+    return () => ctx.revert();
+  }, []);
 
   return (
     <div className="min-h-screen flex flex-col">
       {/* Navigation */}
-      <nav className="bg-white/80 backdrop-blur-md border-b border-gray-200 sticky top-0 z-50">
+      <nav className="bg-white border-b border-[#2b2b2b] sticky top-0 z-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
+          <div className="grid grid-cols-[100px_1fr_auto] ">
             {/* Logo */}
-            <Link href="/" className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">C</span>
-              </div>
-              <span className="font-bold text-xl text-gray-900">Creative</span>
+            <Link href="/" className="flex flex-col items-center justify-center border-l border-r border-[#2b2b2b] font-extrabold text-3xl leading-tight">
+              <div className="font-bold text-xl text-gray-900">STAR</div>
+              <div className="font-bold text-xl text-gray-900">DUST</div>
             </Link>
 
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex space-x-1">
-              {navItems.map((item) => {
-                const Icon = item.icon
-                const isActive = pathname === item.path
+            <div className=''>
+              {/* 중앙 wave + 오른쪽 버튼 */}
+              <div className="flex items-center w-full overflow-hidden relative">
+                <div className="absolute inset-0 overflow-hidden">
+                  <WaveMarquee />
+                </div>
 
-                return (
-                  <Link
-                    key={item.path}
-                    href={item.path}
-                    className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-all duration-200 ${
-                      isActive
-                        ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg'
-                        : 'text-gray-600 hover:text-purple-600 hover:bg-purple-50'
-                    }`}
-                  >
-                    <Icon size={18} />
-                    <span className="font-medium">{item.label}</span>
-                  </Link>
-                )
-              })}
+                <div className="flex ml-auto shrink-0 space-x-3 pl-4 bg-white z-10 relative">
+                  <button className="text-gray-700">알림</button>
+                  <button className="text-gray-700">다크</button>
+                </div>
+              </div>
+
+
+              {/* Desktop Navigation */}
+              <div className="hidden md:flex space-x-1">
+                {navItems.map((item) => {
+                  const isActive = pathname === item.path
+
+                  return (
+                    <Link
+                      key={item.path}
+                      href={item.path}
+                      className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-all duration-200 ${
+                        isActive
+                          ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg'
+                          : 'text-gray-600 hover:text-purple-600 hover:bg-purple-50'
+                      }`}
+                    >
+                      <span className="font-medium">{item.label}</span>
+                    </Link>
+                  )
+                })}
+              </div>
             </div>
 
             {/* Mobile menu toggle button */}
