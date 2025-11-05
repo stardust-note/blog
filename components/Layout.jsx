@@ -8,8 +8,6 @@ import WaveMarquee from './WaveMarquee'
 import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 
-
-
 export default function Layout({ children }) {
   const pathname = usePathname()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -124,7 +122,6 @@ export default function Layout({ children }) {
           <div className="md:hidden bg-white border-t border-gray-200 animate-slide-down">
             <div className="px-4 py-3 space-y-1">
               {navItems.map((item) => {
-                const Icon = item.icon
                 const isActive = pathname === item.path
 
                 return (
@@ -138,7 +135,6 @@ export default function Layout({ children }) {
                         : 'text-gray-600 hover:text-purple-600 hover:bg-purple-50'
                     }`}
                   >
-                    <Icon size={20} />
                     <span className="font-medium">{item.label}</span>
                   </Link>
                 )
