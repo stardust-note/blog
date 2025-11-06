@@ -7,6 +7,10 @@ import WaveMarquee from './WaveMarquee'
 import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { Bell, Moon, Sun } from "lucide-react";
+import { FaYoutube } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
+import { SiNaver } from "react-icons/si";
+
 
 export default function Layout({ children }) {
   const pathname = usePathname()
@@ -43,15 +47,15 @@ export default function Layout({ children }) {
     <div className="min-h-screen flex flex-col">
       {/* Navigation */}
       <nav className="bg-white border-b border-[#2b2b2b] sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-[130px_1fr_auto] ">
             {/* Logo */}
             <Link href="/" className="flex flex-col items-center justify-center border-l border-r border-[#2b2b2b] font-extrabold text-3xl leading-tight">
-              <div className="font-black text-3xl text-gray-900">STAR</div>
-              <div className="font-black text-3xl text-gray-900">DUST</div>
+              <div className="font-black text-3xl">STAR</div>
+              <div className="font-black text-3xl">DUST</div>
             </Link>
 
-            <div className=''>
+            <div>
               {/* 중앙 wave + 오른쪽 버튼 */}
               <div className="flex items-center w-full overflow-hidden relative h-[40px] bg-[#FEE500]">
                 <div className="absolute inset-0 overflow-hidden">
@@ -70,24 +74,61 @@ export default function Layout({ children }) {
               </div>
 
               {/* Desktop Navigation */}
-              <div className="hidden md:flex space-x-1">
-                {navItems.map((item) => {
-                  const isActive = pathname === item.path
+              <div className='flex'>
+                <div className="hidden md:flex space-x-1">
+                  {navItems.map((item) => {
+                    const isActive = pathname === item.path
 
-                  return (
-                    <Link
-                      key={item.path}
-                      href={item.path}
-                      className={`flex items-center space-x-2 px-4 py-2 transition-all duration-200 ${
-                        isActive
-                          ? 'border-b-2 border-black'
-                          : 'font-thin text-gray-400 hover:text-gray-600'
-                      }`}
-                    >
-                      <span className="font-medium">{item.label}</span>
-                    </Link>
-                  )
-                })}
+                    return (
+                      <Link
+                        key={item.path}
+                        href={item.path}
+                        className={`flex items-center space-x-2 px-4 py-2 transition-all duration-200 ${
+                          isActive
+                            ? 'border-b-2 border-black'
+                            : 'font-thin text-gray-400 hover:text-gray-600'
+                        }`}
+                      >
+                        <span className="font-medium">{item.label}</span>
+                      </Link>
+                    )
+                  })}
+                </div>
+
+                <div className="flex ml-auto h-[42px]">
+                  <Link
+                    href="https://blog.naver.com/your-id"
+                    target="_blank"
+                    className="cursor-pointer p-2 w-[41px] border-l border-[#2b2b2b] flex items-center justify-center"
+                  >
+                    <SiNaver
+                      size={14}
+                      className="relative right-[-1px] text-green-600"
+                    />
+                  </Link>
+
+                  <Link
+                    href="https://youtube.com"
+                    target="_blank"
+                    className="cursor-pointer p-2 w-[41px] border-l border-[#2b2b2b] flex items-center justify-center"
+                  >
+                    <FaYoutube
+                      size={24}
+                      className="relative right-[-1px] text-red-500"
+                    />
+                  </Link>
+
+                  <Link
+                    href="https://instagram.com/your-id"
+                    target="_blank"
+                    className="cursor-pointer p-2 w-[41px] border-l border-r border-[#2b2b2b] flex items-center justify-center"
+                  >
+                    <FaInstagram
+                      size={24}
+                      className="relative right-[-1px] text-pink-500"
+                    />
+                  </Link>
+                </div>
               </div>
             </div>
 
