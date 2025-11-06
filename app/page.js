@@ -1,4 +1,4 @@
-'use client'  // ✅ 클라이언트 컴포넌트 (framer-motion, Link 등 사용하므로 필수)
+'use client'
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'

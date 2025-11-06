@@ -1,12 +1,12 @@
-'use client'  // ✅ 클라이언트 전용 컴포넌트 (useState, 이벤트 등 사용)
+'use client'
 
 import { useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import WaveMarquee from './WaveMarquee'
-
 import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
+import { Bell, Moon, Sun } from "lucide-react";
 
 export default function Layout({ children }) {
   const pathname = usePathname()
@@ -43,27 +43,31 @@ export default function Layout({ children }) {
     <div className="min-h-screen flex flex-col">
       {/* Navigation */}
       <nav className="bg-white border-b border-[#2b2b2b] sticky top-0 z-50">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-[100px_1fr_auto] ">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-[130px_1fr_auto] ">
             {/* Logo */}
             <Link href="/" className="flex flex-col items-center justify-center border-l border-r border-[#2b2b2b] font-extrabold text-3xl leading-tight">
-              <div className="font-bold text-xl text-gray-900">STAR</div>
-              <div className="font-bold text-xl text-gray-900">DUST</div>
+              <div className="font-black text-3xl text-gray-900">STAR</div>
+              <div className="font-black text-3xl text-gray-900">DUST</div>
             </Link>
 
             <div className=''>
               {/* 중앙 wave + 오른쪽 버튼 */}
-              <div className="flex items-center w-full overflow-hidden relative">
+              <div className="flex items-center w-full overflow-hidden relative h-[40px] bg-[#FEE500]">
                 <div className="absolute inset-0 overflow-hidden">
                   <WaveMarquee />
                 </div>
 
-                <div className="flex ml-auto shrink-0 space-x-3 pl-4 bg-white z-10 relative">
-                  <button className="text-gray-700">알림</button>
-                  <button className="text-gray-700">다크</button>
+                <div className="flex ml-auto shrink-0 bg-white z-10 relative h-[40px]">
+                  <button className="cursor-pointer p-2 w-[41px] border-l border-[#2b2b2b] flex items-center justify-center">
+                    <Bell size={20} className="relative right-[-1px]" />
+                  </button>
+
+                  <button className="cursor-pointer p-2 w-[41px] border-l border-r border-[#2b2b2b] flex items-center justify-center">
+                    <Moon size={20} className="relative right-[-1px]" />
+                  </button>
                 </div>
               </div>
-
 
               {/* Desktop Navigation */}
               <div className="hidden md:flex space-x-1">
@@ -74,10 +78,10 @@ export default function Layout({ children }) {
                     <Link
                       key={item.path}
                       href={item.path}
-                      className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-all duration-200 ${
+                      className={`flex items-center space-x-2 px-4 py-2 transition-all duration-200 ${
                         isActive
-                          ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg'
-                          : 'text-gray-600 hover:text-purple-600 hover:bg-purple-50'
+                          ? 'border-b-2 border-black'
+                          : 'font-thin text-gray-400 hover:text-gray-600'
                       }`}
                     >
                       <span className="font-medium">{item.label}</span>

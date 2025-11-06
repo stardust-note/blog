@@ -33,9 +33,8 @@ export default function WaveMarquee() {
   }, []);
 
   return (
-    // ✅ overflow-hidden은 오직 이 div 하나에만
-    <div className="relative flex-1 min-w-0 overflow-hidden">
-      <div ref={wrapperRef} className="flex">
+    <div className="relative flex-1 min-w-0 overflow-hidden h-full">
+      <div ref={wrapperRef} className="flex h-full items-center">
         <div ref={contentRef} className="flex shrink-0 whitespace-nowrap">
           <span className="px-4">
             🌊 wave 내용이 들어갑니다 wave 내용이 들어갑니다 wave 내용이 들어갑니다 wave 내용이 들어갑니다 wave 내용이 들어갑니다 wave 내용이 들어갑니다
