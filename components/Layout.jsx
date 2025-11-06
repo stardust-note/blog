@@ -147,10 +147,10 @@ export default function Layout({ children }) {
             </div>
 
             {/* Mobile menu toggle button */}
-            <div className="md:hidden">
+            <div className="md:hidden border-r border-[#2b2b2b] pr-2">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="text-gray-600 hover:text-purple-600 focus:outline-none"
+                className="text-gray-600 hover:text-purple-600 focus:outline-none pt-2 pl-2"
               >
                 {isMenuOpen ? (
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
