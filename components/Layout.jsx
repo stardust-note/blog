@@ -46,8 +46,13 @@ export default function Layout({ children }) {
   return (
     <div className="min-h-screen flex flex-col">
       {/* Navigation */}
-      <nav className="bg-white border-b border-[#2b2b2b] sticky top-0 z-50 before:content-[''] before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-full before:border-t before:border-[#2b2b2b]
-      ">
+      <nav
+        className="
+          bg-white border-b border-[#2b2b2b] sticky top-0 z-50 relative
+          before:content-[''] before:absolute before:left-0 before:top-[40px]
+          before:w-full before:border-t before:border-[#2b2b2b]
+        "
+      >
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-[130px_1fr_auto] ">
             {/* Logo */}
