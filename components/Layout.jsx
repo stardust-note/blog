@@ -46,11 +46,20 @@ export default function Layout({ children }) {
   return (
     <div className="min-h-screen flex flex-col">
       {/* Navigation */}
-      <nav className="bg-white border-b border-[#2b2b2b] sticky top-0 z-50">
+      <nav className="bg-white border-b border-[#2b2b2b] sticky top-0 z-50 before:content-[''] before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-full before:border-t before:border-[#2b2b2b]
+      ">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-[130px_1fr_auto] ">
             {/* Logo */}
-            <Link href="/" className="flex flex-col items-center justify-center border-l border-r border-[#2b2b2b] font-extrabold text-3xl leading-tight">
+            <Link 
+              href="/" 
+              className="
+                relative z-[1]
+                flex flex-col items-center justify-center 
+                border-l border-r border-[#2b2b2b] 
+                font-extrabold text-3xl leading-tight bg-white
+              "
+            >
               <div className="font-black text-3xl">STAR</div>
               <div className="font-black text-3xl">DUST</div>
             </Link>
