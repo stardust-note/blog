@@ -1,3 +1,4 @@
+import PostDetailClientWrapper from "./PostDetailClientWrapper"
 import fs from 'fs'
 import path from 'path'
 import { notFound } from 'next/navigation'
@@ -43,28 +44,28 @@ export default async function PostDetail({ params }) {
   const categoryInfo = getCategoryInfo(category)
 
   return (
-    <div className="min-h-screen py-8 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto">
-        <div className="mb-8">
-          <Link
-            href={`/${category}`}
-            className="inline-flex items-center space-x-2 text-gray-600 hover:text-gray-900 transition-colors"
-          >
-            <ArrowLeft size={20} />
-            <span>{categoryInfo.name}로 돌아가기</span>
-          </Link>
-        </div>
+    <PostDetailClientWrapper title={frontmatter.title}>
+      <div className="min-h-screen py-8 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto">
+          <div className="mb-8">
+            <Link
+              href={`/${category}`}
+              className="inline-flex items-center space-x-2 text-gray-600 hover:text-gray-900 transition-colors"
+            >
+              <ArrowLeft size={20} />
+              <span>{categoryInfo.name}로 돌아가기</span>
+            </Link>
+          </div>
 
-        <article className="bg-white rounded-2xl shadow-xl overflow-hidden">
-          <div className="p-8">
+          <article className="overflow-hidden">
             {frontmatter.date && (
               <div className="flex items-center space-x-2 text-sm text-gray-500 mb-4">
                 <Calendar size={14} />
                 <time dateTime={frontmatter.date}>
-                  {new Date(frontmatter.date).toLocaleDateString('ko-KR', {
-                    year: 'numeric',
-                    month: 'long',
-                    day: 'numeric',
+                  {new Date(frontmatter.date).toLocaleDateString("ko-KR", {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
                   })}
                 </time>
               </div>
@@ -74,11 +75,10 @@ export default async function PostDetail({ params }) {
               {frontmatter.title}
             </h1>
 
-            {/* ✅ MDX 클라이언트 뷰어 */}
             <MDXClientWrapper content={content} />
-          </div>
-        </article>
+          </article>
+        </div>
       </div>
-    </div>
+    </PostDetailClientWrapper>
   )
 }

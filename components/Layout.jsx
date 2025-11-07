@@ -54,7 +54,7 @@ export default function Layout({ children }) {
         "
       >
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-[130px_1fr_auto] ">
+          <div className="grid grid-cols-[100px_1fr_auto] sm:grid-cols-[130px_1fr_auto]">
             {/* Logo */}
             <Link 
               href="/" 
@@ -211,14 +211,10 @@ export default function Layout({ children }) {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <div className="flex items-center justify-center space-x-2 mb-4">
-              <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">C</span>
-              </div>
-              <span className="font-bold text-xl">Creative Portfolio</span>
+              <span className="font-bold text-xl">STARDUST NOTE</span>
             </div>
-            <p className="text-gray-400 mb-4">디자인과 코딩으로 세상을 더 아름답게</p>
             <div className="text-sm text-gray-500">
-              © 2025 Creative Portfolio. Made with ❤️ and Next.js
+              © 2025 STARDUST NOTE. All rights reserved. 
             </div>
           </div>
         </div>
