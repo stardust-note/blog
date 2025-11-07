@@ -1,37 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Stardust Note — 별먼지 블로그
 
-## Getting Started
+Stardust Note는  
+**개발과 창작의 성장 과정을 기록하는 블로그**입니다.  
+Next.js 기반으로 직접 제작했으며,  
+AI 도구와 개발 지식을 활용해 지속적으로 개선하고 있습니다.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## About Me
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+개발과 디자인 사이를 오가며 일합니다.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- Web Developer  
+- Pixel Artist  
+- 3D Illustrator  
+- Character & Visual Designer  
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+다양한 방식으로 시각을 표현하며,  
+코드와 아트워크를 하나의 결과물로 연결하는 작업을 합니다.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Tech Stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Next.js**
+- **Tailwind CSS**  
+- **Vercel**  
+- **AI Assist Tools**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## Blog Topics
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Dev Log:** 개발 과정, 학습 정리, 기술 실험  
+- **Art Log:** 픽셀아트, 3D, 감성 일러스트 제작 기록  
+- **Projects:** 개발 + 디자인 융합 작업  
+- **Notes:** 관찰, 생각, 정리  
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# blog
+---
+
+## Concept
+
+이 블로그는  
+**작은 기록을 쌓아 나의 성장 흐름을 시각적으로 남기는 공간**입니다.  
+기술과 창작이 겹치는 지점에 집중하며,  
+더 나은 결과물을 만들기 위한 실험을 담습니다.
+
+---
+
+## Contact
+
+- **Blog:** https://blog.naver.com/stardustnote
+- **GitHub:** https://github.com/stardust-note  
+- **Instagram:** @stardust.note
+
