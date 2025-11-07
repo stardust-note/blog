@@ -1,4 +1,4 @@
-# Stardust Note — 별먼지 블로그
+# Stardust Note — 별먼지 일기
 
 Stardust Note는  
 **개발과 창작의 성장 과정을 기록하는 블로그**입니다.  
