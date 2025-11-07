@@ -65,8 +65,8 @@ export default function Layout({ children }) {
                 font-extrabold text-3xl leading-tight bg-white
               "
             >
-              <div className="font-black text-3xl">STAR</div>
-              <div className="font-black text-3xl">DUST</div>
+              <div className="font-black text-3xl">별먼지</div>
+              <div className="font-black text-3xl">일기⭐</div>
             </Link>
 
             <div>
