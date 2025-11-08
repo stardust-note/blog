@@ -145,7 +145,7 @@ export default function Design() {
               }}
               className="group"
             >
-              <Link href={`/post/design/${post.slug}`} className="block">
+              <Link href={`/post/3d/${post.slug}`} className="block">
                 <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
                   <div className="relative overflow-hidden">
                     <img

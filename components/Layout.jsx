@@ -17,11 +17,16 @@ export default function Layout({ children }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const navItems = [
-    { path: '/2d', label: '2DArt'},
-    { path: '/design', label: 'ART'},
-    { path: '/webtoon', label: 'PIXEL'},
-    { path: '/tutorial', label: '3D'},
-    { path: '/programming', label: 'CODING'},
+    { path: '/2d', label: '2D Art'},
+    { path: '/3d', label: '3D Art'},
+    { path: '/pixel', label: 'Pixel art'},
+    { path: '/artstudy', label: 'Art Study'},
+    { path: '/notes', label: 'Notes'},
+    { path: '/frontend', label: 'Frontend'},
+    { path: '/motion', label: 'Motion Web'},
+    { path: '/app', label: 'App Dev'},
+    { path: '/game', label: 'Game Dev'},
+    { path: '/backend', label: 'Backend'},
   ]
 
   const marqueeRef = useRef(null);
