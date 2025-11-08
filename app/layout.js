@@ -3,8 +3,8 @@ import './globals.css'
 import Layout from '../components/Layout'
 
 export const metadata = {
-  title: 'My Blog',
-  description: 'Vite → Next.js migration',
+  title: '별먼지일기',
+  description: '작의 성장 과정을 기록하는 블로그',
 }
 
 export default function RootLayout({ children }) {
