@@ -219,7 +219,7 @@ export default function Layout({ children }) {
           </div>
         </div>
       </footer> */}
-      <footer>
+      <footer className='border-t border-[#2b2b2b] '>
         <div className="max-w-[1400px] mx-auto">
           <div className="px-4 sm:px-6 lg:px-8 
             grid grid-cols-1 min-[1240px]:grid-cols-[280px_1fr_auto] 
