@@ -111,7 +111,7 @@ export default function Layout({ children }) {
 
                 <div className="flex ml-auto h-[42px]">
                   <Link
-                    href="https://blog.naver.com/your-id"
+                    href="https://blog.naver.com/stardustnote"
                     target="_blank"
                     className="cursor-pointer p-2 w-[41px] border-l border-[#2b2b2b] flex items-center justify-center"
                   >
@@ -122,7 +122,7 @@ export default function Layout({ children }) {
                   </Link>
 
                   <Link
-                    href="https://youtube.com"
+                    href="https://www.youtube.com/@%EB%B3%84%EB%A8%BC%EC%A7%80%EC%9D%BC%EA%B8%B0"
                     target="_blank"
                     className="cursor-pointer p-2 w-[41px] border-l border-[#2b2b2b] flex items-center justify-center"
                   >
@@ -133,7 +133,7 @@ export default function Layout({ children }) {
                   </Link>
 
                   <Link
-                    href="https://instagram.com/your-id"
+                    href="https://instagram.com/stardust.note"
                     target="_blank"
                     className="cursor-pointer p-2 w-[41px] border-l border-r border-[#2b2b2b] flex items-center justify-center"
                   >
@@ -211,7 +211,7 @@ export default function Layout({ children }) {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <div className="flex items-center justify-center space-x-2 mb-4">
-              <span className="font-bold text-xl">STARDUST NOTE</span>
+              <span className="font-bold text-xl">별먼지 일기</span>
             </div>
             <div className="text-sm text-gray-500">
               © 2025 STARDUST NOTE. All rights reserved. 
