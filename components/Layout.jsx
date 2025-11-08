@@ -17,8 +17,7 @@ export default function Layout({ children }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const navItems = [
-    { path: '/', label: 'HOME'},
-    { path: '/profile', label: 'EMOTICON'},
+    { path: '/2d', label: '2DArt'},
     { path: '/design', label: 'ART'},
     { path: '/webtoon', label: 'PIXEL'},
     { path: '/tutorial', label: '3D'},
@@ -91,7 +90,14 @@ export default function Layout({ children }) {
               <div className='flex'>
                 <div className="hidden md:flex space-x-1">
                   {navItems.map((item) => {
-                    const isActive = pathname === item.path
+                    const segments = pathname.split('/')
+
+                    const basePath =
+                      segments[1] === 'post'
+                        ? `/${segments[2]}`
+                        : `/${segments[1]}`
+
+                    const isActive = basePath === item.path
 
                     return (
                       <Link
@@ -181,7 +187,11 @@ export default function Layout({ children }) {
           <div className="md:hidden bg-white border-t border-gray-200 animate-slide-down">
             <div className="px-4 py-3 space-y-1">
               {navItems.map((item) => {
-                const isActive = pathname === item.path
+                const segments = pathname.split('/')
+                const basePath =
+                  segments[1] === 'post' ? `/${segments[2]}` : `/${segments[1]}`
+
+                const isActive = basePath === item.path
 
                 return (
                   <Link
