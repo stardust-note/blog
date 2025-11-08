@@ -52,5 +52,5 @@ AI 도구와 개발 지식을 활용해 지속적으로 개선하고 있습니�
 
 - **Blog:** https://blog.naver.com/stardustnote
 - **GitHub:** https://github.com/stardust-note  
-- **Instagram:** @stardust.note
+- **Instagram:** [@stardust.note](https://www.instagram.com/stardust.note)
 
