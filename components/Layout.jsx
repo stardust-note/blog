@@ -9,7 +9,7 @@ import gsap from "gsap";
 import { Bell, Moon, Sun } from "lucide-react";
 import { FaYoutube } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
-import { SiNaver } from "react-icons/si";
+import { SiThreads } from "react-icons/si";
 
 
 export default function Layout({ children }) {
@@ -111,13 +111,13 @@ export default function Layout({ children }) {
 
                 <div className="flex ml-auto h-[42px]">
                   <Link
-                    href="https://blog.naver.com/stardustnote"
+                    href="https://threads.net/stardust.note"
                     target="_blank"
                     className="cursor-pointer p-2 w-[41px] border-l border-[#2b2b2b] flex items-center justify-center"
                   >
-                    <SiNaver
-                      size={14}
-                      className="relative right-[-1px] text-green-600"
+                    <SiThreads
+                      size={20}
+                      className="relative right-[-1px] text-black"
                     />
                   </Link>
 
@@ -207,7 +207,7 @@ export default function Layout({ children }) {
       <main className="flex-1">{children}</main>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
+      {/* <footer className="bg-gray-900 text-white py-12">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <div className="flex items-center justify-center space-x-2 mb-4">
@@ -216,6 +216,79 @@ export default function Layout({ children }) {
             <div className="text-sm text-gray-500">
               © 2025 STARDUST NOTE. All rights reserved. 
             </div>
+          </div>
+        </div>
+      </footer> */}
+      <footer>
+        <div className="max-w-[1400px] mx-auto">
+          <div className="px-4 sm:px-6 lg:px-8 
+            grid grid-cols-1 min-[1240px]:grid-cols-[280px_1fr_auto] 
+            h-auto min-[1240px]:h-[60px]"
+          >
+            {/* 로고 영역 */}
+            <Link 
+              href="/" 
+              className="
+                border-l border-r border-[#2b2b2b] 
+                flex flex-col items-center justify-center py-4
+                min-[1240px]:flex min-[1240px]:flex-row min-[1240px]:py-0
+              "
+            >
+              {/* STARDUST NOTE 글자 크기 */}
+              <div className="font-black text-xl min-[1240px]:text-2xl">
+                STARDUST NOTE.
+              </div>
+
+              {/* © 2025 ... (1240px 이하에서만 노출) */}
+              <span className="block min-[1240px]:hidden text-xs mt-1 text-center">
+                © 2025 STARDUST NOTE. All rights reserved.
+              </span>
+            </Link>
+
+            {/* Creative Frontend — 1240px 이상에서만 보임 */}
+            <div className="
+              hidden 
+              min-[1240px]:flex 
+              items-center justify-center border-r border-[#2b2b2b]
+            ">
+              Creative Frontend
+            </div>
+
+            {/* 오른쪽 영역 — 1240px 이상에서만 보임 */}
+            <div className="hidden min-[1240px]:flex items-center gap-4 border-r border-[#2b2b2b] pl-4">
+              <span className="text-sm whitespace-nowrap">
+                © 2025 STARDUST NOTE. All rights reserved.
+              </span>
+
+              <div className="flex items-center ml-auto">
+
+                <Link
+                  href="https://threads.net/stardust.note"
+                  target="_blank"
+                  className="cursor-pointer p-4 h-[60px] border-l border-[#2b2b2b] flex items-center justify-center"
+                >
+                  <span className='pr-2'>Threads</span><SiThreads size={20} className="text-black" />
+                </Link>
+
+                <Link
+                  href="https://www.youtube.com/@%EB%B3%84%EB%A8%BC%EC%A7%80%EC%9D%BC%EA%B8%B0"
+                  target="_blank"
+                  className="cursor-pointer p-4 h-[60px] border-l border-[#2b2b2b] flex items-center justify-center"
+                >
+                  <span className='pr-2'>Youtube</span><FaYoutube size={24} className="text-red-500" />
+                </Link>
+
+                <Link
+                  href="https://instagram.com/stardust.note"
+                  target="_blank"
+                  className="cursor-pointer p-4 h-[60px] border-l border-[#2b2b2b] flex items-center justify-center"
+                >
+                  <span className='pr-2'>Instagram</span><FaInstagram size={24} className="text-pink-500" />
+                </Link>
+
+              </div>
+            </div>
+
           </div>
         </div>
       </footer>
