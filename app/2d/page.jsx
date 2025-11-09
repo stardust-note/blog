@@ -10,12 +10,11 @@ export default function Page() {
   const posts = [
     {
       slug: 'sketch',
-      title: 'React 개발 베스트 프랙티스 2024',
-      date: '2024-01-13',
-      excerpt: '효율적이고 유지보수하기 쉬운 React 코드 작성법',
-      image:
-        '/images/2d/stardust_origin.png',
-      tags: ['React', 'JavaScript', 'Frontend']
+      title: '이모티콘 호랑이',
+      date: '2025-11-09',
+      excerpt: '호랑이 이모티콘 그려보기',
+      image: '/images/2d/sketch.png',
+      tags: ['2D', 'Sketch']
     },
   ]
 

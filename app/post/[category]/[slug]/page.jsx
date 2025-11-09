@@ -7,9 +7,11 @@ import { ArrowLeft, Calendar } from 'lucide-react'
 import MDXClientWrapper from '@/components/MDXClientWrapper' // ✅ 새 클라이언트 컴포넌트 import
 
 const getCategoryInfo = (category) => {
+  console.log(category)
+
   const categories = {
-    design: { name: '디자인', color: 'text-pink-600' },
-    webtoon: { name: '인스타툰', color: 'text-purple-600' },
+    "2d": { name: '2D Art', color: 'text-pink-600' },
+    "3d": { name: '3D Art', color: 'text-purple-600' },
     tutorial: { name: '그림강좌', color: 'text-orange-600' },
     programming: { name: '프로그래밍', color: 'text-blue-600' },
   }
@@ -42,6 +44,8 @@ export default async function PostDetail({ params }) {
   }
 
   const categoryInfo = getCategoryInfo(category)
+
+  
 
   return (
     <PostDetailClientWrapper title={frontmatter.title}>
