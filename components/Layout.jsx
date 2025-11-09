@@ -22,11 +22,11 @@ export default function Layout({ children }) {
     { path: '/pixel', label: 'Pixel Art'},
     { path: '/artstudy', label: 'Art Study'},
     { path: '/notes', label: 'Notes'},
-    { path: '/frontend', label: 'Frontend'},
+    { path: '/frontend', label: 'Front End'},
     { path: '/motion', label: 'Motion Web'},
     { path: '/app', label: 'App Dev'},
     { path: '/game', label: 'Game Dev'},
-    { path: '/backend', label: 'Backend'},
+    { path: '/backend', label: 'Back End'},
   ]
 
   const marqueeRef = useRef(null);

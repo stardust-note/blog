@@ -9,12 +9,12 @@ import useResponsivePagination from '@/hooks/useResponsivePagination'
 export default function Page() {
   const posts = [
     {
-      slug: 'frontend-start',
-      title: 'Next.js로 블로그 만들기',
+      slug: 'app-start',
+      title: 'React Native란 ?',
       date: '2025-11-09',
-      excerpt: '지금 이 블로그는 Next.js로 제작 중입니다.',
+      excerpt: '크로스 플랫폼인 React Native에 대해 알아보기',
       image: '/images/2d/sketch.png',
-      tags: ['frontend','Next.js']
+      tags: ['React Native', 'Cross Platform']
     },
   ]
 
@@ -46,7 +46,7 @@ export default function Page() {
           transition={{ duration: 0.8 }}
           className="mb-16"
         >
-          <h1 className="text-4xl md:text-5xl text-gray-900 mb-4">Front End</h1>
+          <h1 className="text-4xl md:text-5xl text-gray-900 mb-4">App Dev</h1>
         </motion.div>
 
         {/* Posts */}
@@ -63,7 +63,7 @@ export default function Page() {
               }}
               className="group"
             >
-              <Link href={`/post/frontend/${post.slug}`} className="block">
+              <Link href={`/post/app/${post.slug}`} className="block">
                 <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
 
                   {/* ✅ 이미지 영역 */}

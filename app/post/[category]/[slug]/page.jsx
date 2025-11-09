@@ -15,11 +15,11 @@ const getCategoryInfo = (category) => {
     pixel: { name: 'Pixel Art', color: 'text-orange-600' },
     artstudy: { name: 'Art Study', color: 'text-blue-600' },
     notes: { name: 'Notes', color: 'text-blue-600' },
-    frontend: { name: 'Frontend', color: 'text-blue-600' },
+    frontend: { name: 'Front End', color: 'text-blue-600' },
     motion: { name: 'Motion Web', color: 'text-blue-600' },
     app: { name: 'App Dev', color: 'text-blue-600' },
     game: { name: 'Game Dev', color: 'text-blue-600' },
-    backend: { name: 'Backend', color: 'text-blue-600' },
+    backend: { name: 'Back End', color: 'text-blue-600' },
   }
   return categories[category] || { name: '블로그', color: 'text-gray-600' }
 }
