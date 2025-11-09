@@ -28,12 +28,12 @@ const QUOTES = [
 export default function WaveMarquee() {
   const wrapperRef = useRef(null);
   const contentRef = useRef(null);
+  const tweenRef = useRef(null);
 
   useEffect(() => {
     const wrapper = wrapperRef.current;
     const content = contentRef.current;
 
-    // 콘텐츠 클론 2개 생성
     const clone1 = content.cloneNode(true);
     const clone2 = content.cloneNode(true);
     wrapper.appendChild(clone1);
@@ -41,7 +41,7 @@ export default function WaveMarquee() {
 
     const contentWidth = content.offsetWidth;
 
-    gsap.to(wrapper, {
+    const tween = gsap.to(wrapper, {
       x: -contentWidth,
       duration: 60,
       ease: "none",
@@ -51,11 +51,26 @@ export default function WaveMarquee() {
       },
     });
 
+    tweenRef.current = tween;
+
     return () => gsap.killTweensOf(wrapper);
   }, []);
 
+  // ✅ 마우스 오버/아웃 핸들러
+  const handleMouseEnter = () => {
+    tweenRef.current?.pause();
+  };
+
+  const handleMouseLeave = () => {
+    tweenRef.current?.resume();
+  };
+
   return (
-    <div className="relative flex-1 min-w-0 overflow-hidden h-full">
+    <div
+      className="relative flex-1 min-w-0 overflow-hidden h-full"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
       <div ref={wrapperRef} className="flex h-full items-center">
         <div ref={contentRef} className="flex shrink-0 whitespace-nowrap">
           <span className="px-4 flex items-center gap-6">
