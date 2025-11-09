@@ -100,7 +100,7 @@ export default function AnimatedBox({ width = "100%", height = "300px" }) {
         fontSize: '14px',
         pointerEvents: 'none'
       }}>
-        {isMobile ? '👆 탭하여 회전' : '🖱️ 드래그하여 회전'}
+        {isMobile ? '👆 탭 회전' : '🖱️ 드래그하여 회전'}
       </div>
     </div>
   )
