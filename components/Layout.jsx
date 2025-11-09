@@ -19,7 +19,7 @@ export default function Layout({ children }) {
   const navItems = [
     { path: '/2d', label: '2D Art'},
     { path: '/3d', label: '3D Art'},
-    { path: '/pixel', label: 'Pixel art'},
+    { path: '/pixel', label: 'Pixel Art'},
     { path: '/artstudy', label: 'Art Study'},
     { path: '/notes', label: 'Notes'},
     { path: '/frontend', label: 'Frontend'},

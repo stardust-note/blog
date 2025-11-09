@@ -9,7 +9,7 @@ import useResponsivePagination from '@/hooks/useResponsivePagination'
 export default function Page() {
   const posts = [
     {
-      slug: 'sketch',
+      slug: '2d-sketch-start',
       title: '이모티콘 호랑이',
       date: '2025-11-09',
       excerpt: '호랑이 이모티콘 그려보기',

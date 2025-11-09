@@ -2,30 +2,20 @@
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { Calendar, Code } from 'lucide-react'
+import { Calendar } from 'lucide-react'
 import Pagination from '@/components/Pagination'
 import useResponsivePagination from '@/hooks/useResponsivePagination'
 
-export default function Programming() {
+export default function Page() {
   const posts = [
     {
-      slug: 'react-best-practices',
-      title: 'React 개발 베스트 프랙티스 2024',
-      date: '2024-01-13',
-      excerpt: '효율적이고 유지보수하기 쉬운 React 코드 작성법',
-      image:
-        'https://images.pexels.com/photos/11035380/pexels-photo-11035380.jpeg?auto=compress&cs=tinysrgb&w=800',
-      tags: ['React', 'JavaScript', 'Frontend']
+      slug: 'notes-start',
+      title: 'AI가 도래 후 일상 변화',
+      date: '2025-11-09',
+      excerpt: 'AI가 나온지 3년 정도 많은 것이 변화했어요.',
+      image: '/images/2d/sketch.png',
+      tags: ['AI']
     },
-    {
-      slug: 'typescript-advanced',
-      title: 'TypeScript 고급 패턴과 활용법',
-      date: '2024-01-07',
-      excerpt: '타입 안정성을 높이는 고급 TypeScript 기법들',
-      image:
-        'https://images.pexels.com/photos/4164418/pexels-photo-4164418.jpeg?auto=compress&cs=tinysrgb&w=800',
-      tags: ['TypeScript', 'JavaScript', 'Types']
-    }
   ]
 
   const {
@@ -54,15 +44,9 @@ export default function Programming() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="mb-16"
         >
-          <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center">
-            <Code className="w-8 h-8 text-white" />
-          </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">프로그래밍</h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            개발 경험과 기술적 인사이트를 공유하는 공간
-          </p>
+          <h1 className="text-4xl md:text-5xl text-gray-900 mb-4">Notes</h1>
         </motion.div>
 
         {/* Posts */}
@@ -79,7 +63,7 @@ export default function Programming() {
               }}
               className="group"
             >
-              <Link href={`/post/programming/${post.slug}`} className="block">
+              <Link href={`/post/notes/${post.slug}`} className="block">
                 <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
 
                   {/* ✅ 이미지 영역 */}
