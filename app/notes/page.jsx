@@ -10,11 +10,11 @@ export default function Page() {
   const posts = [
     {
       slug: 'notes-start',
-      title: 'AI가 도래 후 일상 변화',
+      title: '인공지능 등장으로 변한 일상',
       date: '2025-11-09',
-      excerpt: 'AI가 나온지 3년 정도 많은 것이 변화했어요.',
-      image: '/images/2d/sketch.png',
-      tags: ['AI']
+      excerpt: '인공지능이 나에게 끼친 영향은 무엇이 있을까요?',
+      image: '/images/notes/notes-start/notes_start.png',
+      tags: ['인공지능','일상변화']
     },
   ]
 
