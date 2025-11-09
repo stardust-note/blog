@@ -3,7 +3,7 @@
 
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
-import { useRef, useMemo } from 'react'
+import { useRef, useMemo, useState, useEffect } from 'react'
 import { useFrame } from '@react-three/fiber'
 import * as THREE from 'three'
 
@@ -63,6 +63,20 @@ function Star() {
 }
 
 export default function AnimatedBox({ width = "100%", height = "300px" }) {
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    // 모바일 감지
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768 || 'ontouchstart' in window)
+    }
+    
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
+
   return (
     <div style={{ width, height, position: 'relative' }}>
       <Canvas camera={{ position: [0, 0, 4] }}>
@@ -73,7 +87,7 @@ export default function AnimatedBox({ width = "100%", height = "300px" }) {
         <OrbitControls enableZoom={false} />
       </Canvas>
       
-      {/* 항상 보이는 안내 텍스트 */}
+      {/* 디바이스별 안내 텍스트 */}
       <div style={{
         position: 'absolute',
         bottom: '10px',
@@ -86,7 +100,7 @@ export default function AnimatedBox({ width = "100%", height = "300px" }) {
         fontSize: '14px',
         pointerEvents: 'none'
       }}>
-        🖱️ 드래그하여 회전
+        {isMobile ? '👆 탭하여 회전' : '🖱️ 드래그하여 회전'}
       </div>
     </div>
   )

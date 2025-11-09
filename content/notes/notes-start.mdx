@@ -7,18 +7,24 @@ description: "인공지능을 사용함에 따라 변화 된 것들"
 
 <div style={{ 
   display: "flex", 
-  flexWrap: "wrap",
-  gap: "20px", 
+  gap: "10px", 
   alignItems: "center",
-  justifyContent: "space-between"
+  maxWidth: "100%",
+  overflow: "hidden"
 }}>
   <img 
     src="/images/notes/notes-start/notes_start.png" 
     alt="그림 설명" 
-    style={{ width: "40%", minWidth: "200px", height: "auto" }} 
+    style={{ 
+      width: "35%", 
+      minWidth: "120px",
+      maxWidth: "200px",
+      height: "auto", 
+      objectFit: "contain" 
+    }} 
   />
-  <div style={{ width: "50%", minWidth: "300px" }}>
-    <AnimatedBox width="100%" height="500px" />
+  <div style={{ flex: 1, minWidth: "150px" }}>
+    <AnimatedBox width="100%" height="250px" />
   </div>
 </div>
 
