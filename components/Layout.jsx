@@ -93,7 +93,7 @@ export default function Layout({ children }) {
 
               {/* Desktop Navigation */}
               <div className='flex'>
-                <div className="hidden md:flex space-x-1">
+                <div className="hidden md:flex">
                   {navItems.map((item) => {
                     const segments = pathname.split('/')
 
@@ -108,10 +108,10 @@ export default function Layout({ children }) {
                       <Link
                         key={item.path}
                         href={item.path}
-                        className={`flex items-center space-x-2 px-4 py-2 transition-all duration-200 ${
+                        className={`flex items-center space-x-2 px-4 py-2 transition-all duration-200 border-r border-black ${
                           isActive
-                            ? 'border-b-2 border-black'
-                            : 'font-thin text-gray-400 hover:text-gray-600'
+                            ? 'bg-[#2d2d2d] text-white'
+                            : 'font-thin text-[#2d2d2d] hover:bg-[#2d2d2d] hover:text-white'
                         }`}
                       >
                         <span className="font-medium">{item.label}</span>
