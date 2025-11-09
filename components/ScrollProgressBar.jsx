@@ -32,7 +32,7 @@ export default function ScrollProgressBar({ footerHeight = 0, title }) {
   return (
     <div
       className={`
-        fixed left-0 w-full bg-white 
+        fixed left-0 w-full bg-white z-40
         border-b border-t border-black
         transition-transform duration-300 ease-out
         ${visible ? "translate-y-0 top-20" : "-translate-y-full top-20"}
@@ -40,7 +40,7 @@ export default function ScrollProgressBar({ footerHeight = 0, title }) {
     >
       <div className="max-w-[1336] mx-auto relative h-[40px] border-l border-r border-black overflow-hidden">
 
-        <div className="absolute inset-0 flex items-center z-50">
+        <div className="absolute inset-0 flex items-center z-20">
           <span className="text-[20px] whitespace-nowrap pl-6">
             {title}
           </span>
