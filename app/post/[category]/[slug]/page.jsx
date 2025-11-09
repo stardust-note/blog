@@ -54,7 +54,7 @@ export default async function PostDetail({ params }) {
   
 
   return (
-    <PostDetailClientWrapper title={frontmatter.title}>
+    <PostDetailClientWrapper title={frontmatter.title} >
       <div className="min-h-screen py-8 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <div className="mb-8">
@@ -86,6 +86,7 @@ export default async function PostDetail({ params }) {
             </h1>
 
             <MDXClientWrapper content={content} />
+            
           </article>
         </div>
       </div>
