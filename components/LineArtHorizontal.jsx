@@ -10,45 +10,73 @@ export default function Page() {
   const tracks = [
     {
       no: "01",
-      ko: "성간 여행일지",
-      en: "Voyage Notes",
+      ko: "2D Art",
+      en: "Detail View",
       desc:
-        "행성의 궤도를 한 줄로 이어 붙인 여행 스케치.",
+        "스케치와 색감으로 다양한 감성을 기록합니다",
     },
     {
       no: "02",
-      ko: "별빛 수집소",
-      en: "Spectral Archive",
+      ko: "3D Art",
+      en: "Detail View",
       desc:
-        "프리즘을 통과한 빛을 선과 점으로 정리한 기록.",
+        "Blender tool을 이용한 3D를 제작합니다.",
     },
     {
       no: "03",
-      ko: "시간층 탐사",
-      en: "Chrono Layers",
+      ko: "Pixel",
+      en: "Detail View",
       desc:
-        "겹겹이 쌓인 시간을 레이어 선으로 정돈한 차트.",
+        "Aseprite tool을 이용한 Pixel을 제작합니다.",
     },
     {
       no: "04",
-      ko: "감정 파동기록",
-      en: "Pulse Sketch",
+      ko: "Art Study",
+      en: "Detail View",
       desc:
-        "감정 진동을 파형으로 남긴 데이터 라벨.",
+        "디지털 아트가 아닌 그림 공부에 대한 것을 담았습니다.",
     },
     {
       no: "05",
-      ko: "은하수 정원",
-      en: "Nebula Flora",
+      ko: "Notes",
+      en: "Detail View",
       desc:
-        "유리 돔에 자라는 식물을 단선으로 묘사한 도감.",
+        "하루 일상에 대한 생각을 담았습니다.",
     },
     {
       no: "06",
-      ko: "신호 해석실",
-      en: "Signal Lab",
+      ko: "Front End",
+      en: "Detail View",
       desc:
-        "점과 선으로 연결한 먼 우주의 메시지 차트.",
+        "프론트 엔드 개발 기술 일지입니다.",
+    },
+    {
+      no: "07",
+      ko: "Motion Web",
+      en: "Detail View",
+      desc:
+        "인터렉션에 대한 기술을 담았습니다.",
+    },
+    {
+      no: "08",
+      ko: "App Dev",
+      en: "Detail View",
+      desc:
+        "React Native에 대한 기술을 담았습니다.",
+    },
+    {
+      no: "09",
+      ko: "Game Dev",
+      en: "Detail View",
+      desc:
+        "Web, App Game 제작 일지 입니다.",
+    },
+    {
+      no: "10",
+      ko: "Back End",
+      en: "Detail View",
+      desc:
+        "Node.js, Express 기술 일지입니다.",
     },
   ];
 
@@ -57,10 +85,10 @@ export default function Page() {
       {/* HERO */}
       <section id="hero" className="border-b border-gray-200">
         <div className="mx-auto max-w-5xl px-4 py-20 sm:py-24">
-          <p className="text-xs tracking-widest uppercase text-gray-500">STARDUST LOG</p>
-          <h1 className="mt-3 text-4xl font-extrabold tracking-tight sm:text-5xl">별먼지 일기</h1>
+          <p className="text-xs tracking-widest uppercase text-gray-500">STARDUST Note</p>
+          <h1 className="mt-3 text-4xl font-extrabold tracking-tight sm:text-5xl">별먼지일기</h1>
           <p className="mt-4 max-w-2xl text-base leading-relaxed text-gray-700">
-            우주선 창가에서 스케치한 듯한 간결한 선으로 감성을 기록합니다.
+           스케치한 듯한 간결한 선으로 성장을 기록합니다.
           </p>
         </div>
       </section>
@@ -68,10 +96,10 @@ export default function Page() {
       {/* CATALOG INTRO */}
       <section id="catalog" aria-label="여섯 장의 선 드로잉 기록" className="border-b border-gray-200">
         <div className="mx-auto max-w-5xl px-4 py-14 sm:py-16">
-          <p className="text-xs tracking-widest uppercase text-gray-500">SIX TRACKS</p>
-          <h2 className="mt-2 text-2xl font-bold sm:text-3xl">여섯 장의 선 드로잉 기록</h2>
+          <p className="text-xs tracking-widest uppercase text-gray-500">TEN TRACKS</p>
+          <h2 className="mt-2 text-2xl font-bold sm:text-3xl">열장의 드로잉 기록</h2>
           <p className="mt-4 max-w-3xl text-base leading-relaxed text-gray-700">
-            복잡한 색을 덜어내고 핵심만 남긴 선으로 우주의 이야기를 정리했습니다.
+            다채로운 방법에 대한 그림과 개발 공부 과정을 기록합니다.
           </p>
 
           {/* GRID: 6 CARDS */}
@@ -97,10 +125,10 @@ export default function Page() {
       {/* COLLAB CTA */}
       <section id="collaboration" className="bg-gray-50">
         <div className="mx-auto max-w-5xl px-4 py-16 sm:py-20">
-          <p className="text-xs tracking-widest uppercase text-gray-500">STARDUST LOG</p>
-          <h2 className="mt-2 text-2xl font-bold sm:text-3xl">함께 남기는 단선 기록</h2>
+          <p className="text-xs tracking-widest uppercase text-gray-500">STARDUST NOTE</p>
+          <h2 className="mt-2 text-2xl font-bold sm:text-3xl">함께 남기는 기록</h2>
           <p className="mt-4 max-w-3xl text-base leading-relaxed text-gray-700">
-            간결한 선 위에 새로운 감각을 더할 창작자를 기다립니다. 스케치처럼 가벼운 제안도 환영해요.
+            별먼지일기와 같이 새로운 감각을 더할 창작자를 기다립니다. 스케치처럼 가벼운 제안도 환영해요.
           </p>
           <div className="mt-8">
             <Link
