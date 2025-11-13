@@ -20,6 +20,8 @@ export default function LineArtPage() {
 
       {/* CATALOG */}
         <StardustLog />
+
+        {/* mobile일때 */}
       {/* <section className="w-[min(1024px,94vw)] mx-auto mt-[clamp(3rem,6vw,4rem)] grid gap-[clamp(2rem,4vw,3rem)]">
         <header className="grid gap-3 border-l-2 border-[#111] pl-[clamp(1.5rem,4vw,2.4rem)]">
           <span className="text-xs tracking-[0.3em] uppercase">SIX TRACKS</span>
