@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import LineArtHorizontal from '../components/LineArtHorizontal'
+import LineArtPage from '../components/LineArtPage'
 
 
 export default function Home() {
@@ -10,7 +10,7 @@ export default function Home() {
 
   return (
     <>
-      <LineArtHorizontal />
+      <LineArtPage />
     </>
   )
 }
