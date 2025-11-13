@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import LineArtPage from '../components/LineArtPage'
+import LineArtPage from '../components/LineArtPage.jsx'
 
 
 export default function Home() {

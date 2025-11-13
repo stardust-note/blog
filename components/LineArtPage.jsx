@@ -1,9 +1,10 @@
-// Next.js (App Router) + TailwindCSS implementation
-// File: app/stardust-log/page.tsx
+"use client";
 
 import React from "react";
+import StardustLog from './StardustLog.jsx'
 
-export default function StardustLog() {
+
+export default function LineArtPage() {
   return (
     <main className="min-h-screen flex flex-col gap-[clamp(2rem,4vw,3rem)] pb-[clamp(4rem,8vw,6rem)] bg-[#f7f5ef] text-[#1b1c1e]">
       {/* HERO */}
@@ -18,7 +19,8 @@ export default function StardustLog() {
       </section>
 
       {/* CATALOG */}
-      <section className="w-[min(1024px,94vw)] mx-auto mt-[clamp(3rem,6vw,4rem)] grid gap-[clamp(2rem,4vw,3rem)]">
+        <StardustLog />
+      {/* <section className="w-[min(1024px,94vw)] mx-auto mt-[clamp(3rem,6vw,4rem)] grid gap-[clamp(2rem,4vw,3rem)]">
         <header className="grid gap-3 border-l-2 border-[#111] pl-[clamp(1.5rem,4vw,2.4rem)]">
           <span className="text-xs tracking-[0.3em] uppercase">SIX TRACKS</span>
           <h3 className="text-[clamp(1.8rem,4vw,2.6rem)] font-bold">여섯 장의 선 드로잉 기록</h3>
@@ -30,7 +32,6 @@ export default function StardustLog() {
         <div className="grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-[clamp(1.5rem,3vw,2.2rem)] relative isolate">
           {cards.map((card) => (
           <article key={card.index} className="relative">
-            {/* 고정 그림자 레이어 */}
             <div
                 className="
                 absolute top-2 left-2 
@@ -41,7 +42,6 @@ export default function StardustLog() {
                 "
             />
 
-            {/* 움직이는 카드 본체 */}
             <div
                 className="
                 bg-[#fefdf9] border-2 border-[#111] rounded-[22px]
@@ -67,7 +67,7 @@ export default function StardustLog() {
             </article>
           ))}
         </div>
-      </section>
+      </section> */}
 
       {/* COLLAB */}
       <section className="w-[min(960px,92vw)] mx-auto mt-[clamp(3rem,7vw,4.2rem)] p-[clamp(2.4rem,5vw,3.2rem)] border-2 border-[#111] rounded-[clamp(24px,4vw,32px)] bg-[#fefdf9] shadow-[12px_12px_0_rgba(17,17,17,0.85)] flex flex-wrap gap-[clamp(1.5rem,3vw,2.5rem)] items-center justify-between">
