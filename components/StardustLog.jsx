@@ -19,22 +19,24 @@ export default function StardustLog() {
   const pinSectionRef = useRef(null);
   const scrollRef = useRef(null);
   const cardRefs = useRef([]);
+  const triggers = useRef([]); // ⭐ 자신이 만든 ScrollTrigger만 관리하는 배열
 
 
-  /* ---------------------------------------------
-   * GSAP 초기화 함수 (반응형 대응)
-   * ------------------------------------------- */
+  /* -------------------------------------------------
+   * GSAP 가로 스크롤 + 카드 효과 (반응형)
+   * ------------------------------------------------- */
   const initGsap = useCallback(() => {
     const isMobile = window.matchMedia("(max-width: 768px)").matches;
 
-    // 이전 트리거/트윈 제거
-    ScrollTrigger.getAll().forEach((st) => st.kill());
-    gsap.globalTimeline.clear();
+    // ⭐ 이전에 만든 Trigger만 제거
+    triggers.current.forEach((st) => st.kill());
+    triggers.current = [];
 
     document.body.style.removeProperty("overflow");
     document.body.style.removeProperty("height");
 
-    if (isMobile) return; // 모바일은 GSAP 비활성화
+    // 모바일은 가로스크롤 비활성화
+    if (isMobile) return;
 
     const pinSection = pinSectionRef.current;
     const scroll = scrollRef.current;
@@ -46,8 +48,10 @@ export default function StardustLog() {
     const windowWidth = window.innerWidth;
     const scrollDistance = totalScrollWidth - windowWidth;
 
-    // 가로 스크롤
-    gsap.to(scroll, {
+    /* ------------------------------
+     * 가로 스크롤
+     * ---------------------------- */
+    const scrollTween = gsap.to(scroll, {
       x: -scrollDistance,
       ease: "none",
       scrollTrigger: {
@@ -59,9 +63,13 @@ export default function StardustLog() {
       },
     });
 
-    // 카드 패럴랙스
+    triggers.current.push(scrollTween.scrollTrigger);
+
+    /* ------------------------------
+     * 카드 패럴랙스
+     * ---------------------------- */
     items.forEach((card, index) => {
-      gsap.to(card, {
+      const tween = gsap.to(card, {
         y: index % 2 === 0 ? -40 : -20,
         ease: "none",
         scrollTrigger: {
@@ -71,26 +79,25 @@ export default function StardustLog() {
           scrub: 1,
         },
       });
+
+      triggers.current.push(tween.scrollTrigger);
     });
 
     ScrollTrigger.refresh();
   }, []);
 
 
-  /* ---------------------------------------------
-   * 최초 mount + resize 이벤트 감지
-   * ------------------------------------------- */
+  /* -------------------------------------------------
+   * mount + resize 반응형
+   * ------------------------------------------------- */
   useEffect(() => {
     initGsap();
 
-    const resizeHandler = () => {
-      initGsap();
-    };
+    const resizeHandler = () => initGsap();
 
     window.addEventListener("resize", resizeHandler);
     window.addEventListener("orientationchange", resizeHandler);
 
-    // 미디어쿼리 감지기
     const mq = window.matchMedia("(max-width: 768px)");
     mq.addEventListener("change", resizeHandler);
 
@@ -98,23 +105,24 @@ export default function StardustLog() {
       window.removeEventListener("resize", resizeHandler);
       window.removeEventListener("orientationchange", resizeHandler);
       mq.removeEventListener("change", resizeHandler);
-      ScrollTrigger.getAll().forEach((st) => st.kill());
-      gsap.globalTimeline.clear();
+
+      // ⭐ 자신이 만든 Trigger만 제거
+      triggers.current.forEach((st) => st.kill());
+      triggers.current = [];
     };
   }, [initGsap]);
 
 
-  /* ---------------------------------------------
+  /* -------------------------------------------------
    * JSX
-   * ------------------------------------------- */
+   * ------------------------------------------------- */
   return (
     <main className="min-h-screen bg-[#f7f5ef] text-[#1b1c1e] overflow-x-hidden">
 
       <section
         ref={pinSectionRef}
         className="
-          w-full
-          flex flex-col justify-center
+          w-full flex flex-col justify-center
           md:min-h-[100vh]
           overflow-x-hidden
         "
@@ -182,6 +190,7 @@ export default function StardustLog() {
           ))}
         </div>
       </section>
+
     </main>
   );
 }
