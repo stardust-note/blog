@@ -16,7 +16,9 @@ export default function PostDetailClientWrapper({ children, title }) {
   return (
     <>
       <ScrollProgressBar footerHeight={footerHeight} title={title} />
-      {children}
+      <article className="post-content">
+        {children}
+      </article>
     </>
   )
 }

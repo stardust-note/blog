@@ -5,6 +5,49 @@
 html, body {
   font-weight: 300; /* DemiLight */
   color: #3a3734;   /* 브런치 본문 색상 */
+  line-height: 22pt;
+  letter-spacing: -0.2px;
+}
+
+
+/* ---- 브런치처럼 깔끔한 본문 스타일 ---- */
+.post-content {
+  font-weight: 300; /* DemiLight */
+  color: #3a3734;   /* 브런치 본문 색상 */
+  line-height: 22pt;
+}
+
+.post-content h1,
+.post-content h2,
+.post-content h3 {
+  color: #111;
+  font-weight: 700;
+  margin-top: 2.2rem;
+  margin-bottom: 1.2rem;
+}
+
+.post-content p {
+  margin-bottom: 1.6rem;
+}
+
+.post-content strong {
+  color: #000;
+  font-weight: 700;
+}
+
+.post-content a {
+  color: #0070f3;
+  text-decoration: underline;
+}
+
+/* 리스트도 여백 보기 좋게 */
+.post-content ul,
+.post-content ol {
+  margin-left: 1.4rem;
+  margin-bottom: 1.6rem;
   line-height: 1.85;
-  letter-spacing: -0.01em;
+}
+
+.post-content li {
+  margin-bottom: 0.4rem;
 }
