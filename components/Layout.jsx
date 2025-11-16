@@ -92,7 +92,7 @@ export default function Layout({ children }) {
               </div>
 
               {/* Desktop Navigation */}
-              <div className='flex'>
+              <div className='flex h-[42px]'>
                 <div className="hidden md:flex">
                   {navItems.map((item) => {
                     const segments = pathname.split('/')

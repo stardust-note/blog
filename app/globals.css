@@ -1,2 +1,10 @@
 @import "tailwindcss";
 
+/* globals.css */
+
+html, body {
+  font-weight: 300; /* DemiLight */
+  color: #3a3734;   /* 브런치 본문 색상 */
+  line-height: 1.85;
+  letter-spacing: -0.01em;
+}

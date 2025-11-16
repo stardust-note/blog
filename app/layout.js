@@ -1,5 +1,14 @@
 // app/layout.jsx
 import './globals.css'
+import { Noto_Sans_KR } from 'next/font/google'
+
+const notoSans = Noto_Sans_KR({
+  weight: ["300", "400", "500", "700"], // 300 = DemiLight
+  subsets: ["latin"],
+  display: "swap",
+})
+
+
 import Layout from '../components/Layout'
 
 export const metadata = {
@@ -9,8 +18,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="ko">
-      <body className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50">
+    <html lang="ko" className={notoSans.className}>
+      <body className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 ">
         <Layout>
           {children}
         </Layout>
