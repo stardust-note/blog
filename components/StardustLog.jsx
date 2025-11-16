@@ -51,6 +51,15 @@ export default function StardustLog() {
   const cardRefs = useRef([]);
 
   useEffect(() => {
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+
+    // 📌 모바일: GSAP 완전 비활성화
+    if (isMobile) {
+      ScrollTrigger.getAll().forEach((st) => st.kill());
+      return;
+    }
+
+    // 📌 데스크탑 전용 GSAP
     const pinSection = pinSectionRef.current;
     const scroll = scrollRef.current;
     const cards = cardRefs.current;
@@ -61,20 +70,20 @@ export default function StardustLog() {
     const windowWidth = window.innerWidth;
     const scrollDistance = totalScrollWidth - windowWidth;
 
-    // 가로 스크롤 + 핀
+    // ⭐ 데스크탑: 가로 스크롤 + pin
     gsap.to(scroll, {
-    x: -scrollDistance,
-    ease: "none",
-    scrollTrigger: {
-      trigger: pinSection,
-      start: "top top",
-      end: () => `+=${scrollDistance * 12}`,   // ← ★ 6배로 크게 늘림
-      scrub: 1,
-      pin: true,
-    },
-  });
+      x: -scrollDistance,
+      ease: "none",
+      scrollTrigger: {
+        trigger: pinSection,
+        start: "top top",
+        end: () => `+=${scrollDistance * 12}`,
+        scrub: 1,
+        pin: true,
+      },
+    });
 
-    // 카드 패럴랙스
+    // ⭐ 카드 패럴랙스
     cards.forEach((card, index) => {
       gsap.to(card, {
         y: index % 2 === 0 ? -40 : -20,
@@ -82,23 +91,20 @@ export default function StardustLog() {
         scrollTrigger: {
           trigger: pinSection,
           start: "top top",
-          end: () => `+=${scrollDistance * 5}`,  // ← 동일하게 길이 늘림 🍯
+          end: () => `+=${scrollDistance * 5}`,
           scrub: 1,
         },
       });
     });
-
   }, []);
 
   return (
-    <main className="min-h-screen bg-[#f7f5ef] text-[#1b1c1e]">
-
-      {/* CATALOG (PIN + HORIZONTAL SCROLL) */}
+    <main className="min-h-screen bg-[#f7f5ef] text-[#1b1c1e] overflow-x-hidden">
       <section
         ref={pinSectionRef}
-        className="w-full h-[100vh] flex flex-col justify-center"
+        className="w-full min-h-[100vh] flex flex-col justify-center"
       >
-        {/* Header remains fixed during pin */}
+        {/* Header */}
         <header className="mb-12 w-[min(1024px,94vw)] mx-auto">
           <span className="text-xs tracking-[0.3em] uppercase">SIX TRACKS</span>
           <h3 className="text-[clamp(1.8rem,4vw,2.6rem)] font-bold">
@@ -109,16 +115,31 @@ export default function StardustLog() {
           </p>
         </header>
 
-        {/* Horizontal Scroll Row */}
+        {/* -------------------------------------------
+            공통 컨테이너
+            - 모바일: flex-col => 자연스러운 세로 스크롤
+            - 데스크탑: md:flex-row => 가로 스크롤 영역
+          ------------------------------------------- */}
         <div
           ref={scrollRef}
-          className="flex gap-[clamp(1.5rem,3vw,2.2rem)] pl-[10vw] pr-[10vw]"
+          className="
+            flex
+            flex-col                /* 📌 모바일: 세로 */
+            md:flex-row             /* 📌 데스크탑: 가로 */
+            gap-[clamp(1.5rem,3vw,2.2rem)]
+            px-[10vw]
+          "
         >
           {cards.map((card, i) => (
             <article
               key={card.index}
               ref={(el) => (cardRefs.current[i] = el)}
-              className="relative w-[300px] shrink-0"
+              className="
+                relative 
+                w-full 
+                md:w-[300px]       /* 데스크탑 카드 폭 */
+                shrink-0
+              "
             >
               {/* shadow */}
               <div
@@ -133,9 +154,9 @@ export default function StardustLog() {
                 className="
                   bg-[#fefdf9] border-2 border-[#111] rounded-[22px]
                   p-6 grid gap-4
+                  relative z-10
                   transition-transform duration-300
                   hover:-translate-x-1 hover:-translate-y-1
-                  relative z-10
                 "
               >
                 <div className="flex items-center gap-3">
@@ -146,7 +167,9 @@ export default function StardustLog() {
                   <h4 className="font-semibold text-lg">{card.title}</h4>
                 </div>
 
-                <p className="text-[0.98rem] leading-[1.6]">{card.summary}</p>
+                <p className="text-[0.98rem] leading-[1.6]">
+                  {card.summary}
+                </p>
                 <span className="text-[0.75rem] tracking-[0.24em] uppercase">
                   {card.tag}
                 </span>
@@ -158,4 +181,3 @@ export default function StardustLog() {
     </main>
   );
 }
-
