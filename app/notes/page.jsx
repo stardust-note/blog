@@ -8,21 +8,21 @@ import useResponsivePagination from '@/hooks/useResponsivePagination'
 
 export default function Page() {
   const posts = [
-    {
-      slug: 'notes-stardust',
-      title: '별먼지란? 그리고 별먼지일기',
-      date: '2025-11-09',
-      excerpt: '별먼지에 대한 이야기',
-      image: '/images/notes/notes-stardust/notes_stardust.png',
-      tags: ['별먼지','별먼지일기','생각정리']
-    },
-    {
+    { // 1
       slug: 'notes-start',
       title: '블로그를 제작하게된 계기',
       date: '2025-11-09',
       excerpt: '블로그를 직접 만들다.',
       image: '/images/notes/notes-start/notes_start.png',
       tags: ['블로그','인공지능','Nest.js','MDX']
+    },
+    { // 2
+      slug: 'notes-stardust',
+      title: '별먼지란? 그리고 별먼지일기',
+      date: '2025-11-09',
+      excerpt: '별먼지에 대한 이야기',
+      image: '/images/notes/notes-stardust/notes_stardust.png',
+      tags: ['별먼지','별먼지일기','생각정리']
     },
   ]
 
