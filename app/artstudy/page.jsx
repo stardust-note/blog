@@ -10,11 +10,11 @@ export default function Page() {
   const posts = [
     {
       slug: 'study-start',
-      title: '그림 강습',
-      date: '2025-11-09',
-      excerpt: '그림 강습을 받고 있어요.',
-      image: '/images/2d/sketch.png',
-      tags: ['Art Study']
+      title: '고양이 모작',
+      date: '2025-11-18',
+      excerpt: '아크릴 물감으로 고양이를 모작 해봤습니다.',
+      image: '/images/artstudy/cat/img09_finish.jpeg',
+      tags: ['Art Study', '아크릴', '고양이']
     },
   ]
 

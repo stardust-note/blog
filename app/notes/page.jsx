@@ -19,7 +19,7 @@ export default function Page() {
     { // 2
       slug: 'notes-stardust',
       title: '별먼지란? 그리고 별먼지일기',
-      date: '2025-11-09',
+      date: '2025-11-17',
       excerpt: '별먼지에 대한 이야기',
       image: '/images/notes/notes-stardust/notes_stardust.png',
       tags: ['별먼지','별먼지일기','생각정리']
