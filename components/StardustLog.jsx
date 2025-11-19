@@ -3,14 +3,19 @@
 import React, { useEffect, useRef, useCallback } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Link from "next/link"
 
 const cards = [
-  { index: "01", title: "성간 여행일지", summary: "행성의 궤도를 한 줄로 이어 붙인 여행 스케치.", tag: "Voyage Notes" },
-  { index: "02", title: "별빛 수집소", summary: "프리즘을 통과한 빛을 선과 점으로 정리한 기록.", tag: "Spectral Archive" },
-  { index: "03", title: "시간층 탐사", summary: "겹겹이 쌓인 시간을 레이어 선으로 정돈한 차트.", tag: "Chrono Layers" },
-  { index: "04", title: "감정 파동기록", summary: "감정 진동을 파형으로 남긴 데이터 라벨.", tag: "Pulse Sketch" },
-  { index: "05", title: "은하수 정원", summary: "유리 돔에 자라는 식물을 단선으로 묘사한 도감.", tag: "Nebula Flora" },
-  { index: "06", title: "신호 해석실", summary: "점과 선으로 연결한 먼 우주의 메시지 차트.", tag: "Signal Lab" },
+  { index: "01", title: "2D 일러스트 모음집", link: "/2d",summary: "이모티콘, 일러스트, 인스타툰 등 다양한 2D 그림을 저장한 공간입니다.", tag: "Collection of 2D Illustrations" },
+  { index: "02", title: "3D 아트 모음집", link: "/3d",summary: "블렌더로 만드는 3D 아트 모음집 공간입니다.", tag: "3D Artwork Collection" },
+  { index: "03", title: "시간층 탐사", link: "/pixel",summary: "겹겹이 쌓인 시간을 레이어 선으로 정돈한 차트.", tag: "Chrono Layers" },
+  { index: "04", title: "감정 파동기록", link: "/artstudy",summary: "감정 진동을 파형으로 남긴 데이터 라벨.", tag: "Pulse Sketch" },
+  { index: "05", title: "은하수 정원", link: "/notes", summary: "유리 돔에 자라는 식물을 단선으로 묘사한 도감.", tag: "Nebula Flora" },
+  { index: "06", title: "신호 해석실", link: "/frontend", summary: "점과 선으로 연결한 먼 우주의 메시지 차트.", tag: "Signal Lab" },
+  { index: "07", title: "신호 해석실", link: "/motion", summary: "점과 선으로 연결한 먼 우주의 메시지 차트.", tag: "Signal Lab" },
+  { index: "08", title: "신호 해석실", link: "/app", summary: "점과 선으로 연결한 먼 우주의 메시지 차트.", tag: "Signal Lab" },
+  { index: "09", title: "신호 해석실", link: "/game", summary: "점과 선으로 연결한 먼 우주의 메시지 차트.", tag: "Signal Lab" },
+  { index: "10", title: "신호 해석실", link: "/backend", summary: "점과 선으로 연결한 먼 우주의 메시지 차트.", tag: "Signal Lab" },
 ];
 
 gsap.registerPlugin(ScrollTrigger);
@@ -57,7 +62,7 @@ export default function StardustLog() {
       scrollTrigger: {
         trigger: pinSection,
         start: "top top",
-        end: () => `+=${scrollDistance * 12}`,
+        end: () => `+=${scrollDistance * 6}`,
         scrub: 1,
         pin: true,
       },
@@ -70,12 +75,11 @@ export default function StardustLog() {
      * ---------------------------- */
     items.forEach((card, index) => {
       const tween = gsap.to(card, {
-        y: index % 2 === 0 ? -40 : -20,
         ease: "none",
         scrollTrigger: {
           trigger: pinSection,
           start: "top top",
-          end: () => `+=${scrollDistance * 5}`,
+          end: () => `+=${scrollDistance * 10}`,
           scrub: 1,
         },
       });
@@ -117,7 +121,7 @@ export default function StardustLog() {
    * JSX
    * ------------------------------------------------- */
   return (
-    <main className="min-h-screen bg-[#f7f5ef] text-[#1b1c1e] overflow-x-hidden">
+    <main className="min-h-screen border-t border-b border-black text-[#1b1c1e] overflow-x-hidden">
 
       <section
         ref={pinSectionRef}
@@ -127,13 +131,13 @@ export default function StardustLog() {
           overflow-x-hidden
         "
       >
-        <header className="mb-12 w-[min(1024px,94vw)] mx-auto">
-          <span className="text-xs tracking-[0.3em] uppercase">SIX TRACKS</span>
-          <h3 className="text-[clamp(1.8rem,4vw,2.6rem)] font-bold">
-            여섯 장의 선 드로잉 기록
+        <header className="mb-12 w-[min(1340px,94vw)] mx-auto">
+          <span className="text-xs tracking-[0.3em] uppercase">TRACKS</span>
+          <h3 className="text-[clamp(1.8rem,4vw,2.6rem)] font-bold mt-[1ch]">
+            카테고리 셀렉션
           </h3>
-          <p className="text-base leading-[1.7] max-w-[60ch]">
-            복잡한 색을 덜어내고 핵심만 남긴 선으로 우주의 이야기를 정리했습니다.
+          <p className="text-base leading-[1.7] mt-[3ch] max-w-[60ch]">
+            디자인과 개발 기술과 관련된 기록들을 카테고리별로 정리해 모았습니다.
           </p>
         </header>
 
@@ -142,51 +146,59 @@ export default function StardustLog() {
           ref={scrollRef}
           className="
             flex flex-col md:flex-row
-            w-full md:w-auto
+            w-full md:w-auto 
             overflow-visible
             gap-[clamp(1.5rem,3vw,2.2rem)]
-            px-[10vw]
+            px-[15vw]
           "
         >
           {cards.map((card, i) => (
-            <article
-              key={card.index}
-              ref={(el) => (cardRefs.current[i] = el)}
-              className="relative w-full md:w-[300px] md:shrink-0"
-            >
-              <div
-                className="
-                  absolute top-2 left-2 
-                  w-full h-full 
-                  rounded-[22px]
-                  bg-[rgba(17,17,17,0.85)]
-                  -z-10
-                  hidden md:block
-                "
-              />
-
-              <div
-                className="
-                  bg-[#fefdf9] border-2 border-[#111] rounded-[22px]
-                  p-6 grid gap-4 relative z-10
-                  transition-transform duration-300
-                  hover:-translate-x-1 hover:-translate-y-1
-                "
+              <article
+                key={card.index}
+                ref={(el) => (cardRefs.current[i] = el)}
+                className="relative w-full md:w-[360px] md:shrink-0"
               >
-                <div className="flex items-center gap-3">
-                  <span className="text-sm tracking-[0.28em] uppercase font-semibold">
-                    {card.index}
-                  </span>
-                  <span className="flex-1 h-[2px] bg-[repeating-linear-gradient(
-                    90deg,#111_0,#111_8px,transparent_8px,transparent_14px
-                  )]"></span>
-                  <h4 className="font-semibold text-lg">{card.title}</h4>
-                </div>
+                {/* Shadow layer */}
+                <div
+                  className="
+                    absolute top-2 left-2 
+                    w-full h-full 
+                    rounded-[22px]
+                    bg-[rgba(17,17,17,0.85)]
+                    -z-10
+                    hidden md:block
+                  "
+                />
 
-                <p className="text-[0.98rem] leading-[1.6]">{card.summary}</p>
-                <span className="text-[0.75rem] tracking-[0.24em] uppercase">{card.tag}</span>
-              </div>
-            </article>
+                {/* Link wrapper */}
+                <Link
+                  href={card.link} // 👉 Next.js 라우팅
+                  className="
+                    bg-[#fff] border-2 border-[#111] rounded-[22px] h-[300px]
+                    p-6 grid gap-4 relative z-10
+                    transition-transform duration-300
+                    hover:-translate-x-1 hover:-translate-y-1
+                    block
+                  "
+                >
+                  <div className="flex items-center gap-3">
+                    <span className="text-sm tracking-[0.28em] uppercase font-semibold">
+                      {card.index}
+                    </span>
+                    <span
+                      className="flex-1 h-[2px] bg-[repeating-linear-gradient(
+                        90deg,#111_0,#111_8px,transparent_8px,transparent_14px
+                      )]"
+                    ></span>
+                    <h4 className="font-semibold text-lg">{card.title}</h4>
+                  </div>
+
+                  <p className="text-[0.98rem] leading-[1.6]">{card.summary}</p>
+                  <span className="text-[0.75rem] tracking-[0.24em] uppercase">
+                    {card.tag}
+                  </span>
+                </Link>
+              </article>
           ))}
         </div>
       </section>

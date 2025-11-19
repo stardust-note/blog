@@ -222,18 +222,6 @@ export default function Layout({ children }) {
       <main className="flex-1">{children}</main>
 
       {/* Footer */}
-      {/* <footer className="bg-gray-900 text-white py-12">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <div className="flex items-center justify-center space-x-2 mb-4">
-              <span className="font-bold text-xl">별먼지 일기</span>
-            </div>
-            <div className="text-sm text-gray-500">
-              © 2025 STARDUST NOTE. All rights reserved. 
-            </div>
-          </div>
-        </div>
-      </footer> */}
       <footer className='border-t border-[#2b2b2b] '>
         <div className="max-w-[1400px] mx-auto">
           <div className="px-4 sm:px-6 lg:px-8 
