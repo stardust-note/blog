@@ -13,8 +13,8 @@ export default function Page() {
       title: '3D 블렌더란 무엇일까요?',
       date: '2025-11-26',
       excerpt: '블렌더에 대해 알아봅니다',
-      // image: '/images/3D/blender-start/img_blender_start.png',
-      image: '/images/2d/sketch/img_toon00.png',
+      image: '/images/3d/blender-start/img_blender_start.png',
+      // image: '/images/2d/sketch/img_toon00.png',
       tags: ['3D', 'Blender']
     },
   ]
