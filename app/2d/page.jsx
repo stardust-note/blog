@@ -10,11 +10,11 @@ export default function Page() {
   const posts = [
     {
       slug: '2d-sketch-start',
-      title: '이모티콘 호랑이',
-      date: '2025-11-09',
-      excerpt: '호랑이 이모티콘 그려보기',
-      image: '/images/2d/sketch.png',
-      tags: ['2D', 'Sketch']
+      title: '별먼지일기 탄생 과정',
+      date: '2025-11-26',
+      excerpt: '만화로 보는 별먼지 일기 탄생 과정',
+      image: '/images/2d/sketch/img_toon00.png',
+      tags: ['2D', 'Sketch', "인스타툰", "만화", "별먼지일기", "프로크리에이트"]
     },
   ]
 

@@ -8,14 +8,14 @@ import Link from "next/link"
 const cards = [
   { index: "01", title: "2D 아트 모음 - 더보기", link: "/2d",summary: "이모티콘, 일러스트, 인스타툰 등 다양한 2D 그림을 저장한 공간입니다.", tag: "Collection of 2D Illustrations" },
   { index: "02", title: "3D 아트 모음 - 더보기", link: "/3d",summary: "블렌더로 만드는 3D 아트 모음 공간입니다.", tag: "3D Artwork Collection" },
-  { index: "03", title: "Pixel 아트 모음 - 더보기", link: "/pixel",summary: "Aseprite로 만드는 픽셀 아트 모음 공간입니다.", tag: "Pixel Artwork Collection" },
-  { index: "04", title: "그림 학습 - 더보기", link: "/artstudy",summary: "그림 관련 학습에 대한 모음 공간입니다.", tag: "Art Study" },
-  { index: "05", title: "개인 일지 - 더보기", link: "/notes", summary: "일상생활에서 떠오른 이야기 모음 공간입니다.", tag: "Notes" },
-  { index: "06", title: "프론트개발 기술 모음 - 더보기", link: "/frontend", summary: "React로 만드는 프론트 개발 공간입니다.", tag: "Front End" },
-  { index: "07", title: "인터렉션 웹 기술 모음 - 더보기", link: "/motion", summary: "인터렉션 웹을 다루는 공간입니다.", tag: "Motion Web" },
-  { index: "08", title: "앱개발 기술 - 더보기", link: "/app", summary: "앱개발을 다루는 공간입니다.", tag: "App Develop" },
-  { index: "09", title: "게임 개발 기술 모음 - 더보기", link: "/game", summary: "HTML5로 Game을 만드는 공간입니다.", tag: "Game Develop" },
-  { index: "10", title: "백엔드개발 기술 모음 - 더보기", link: "/backend", summary: "Node.js와 Express, DB를 공부하는 공간입니다.", tag: "Back End" },
+  // { index: "03", title: "Pixel 아트 모음 - 더보기", link: "/pixel",summary: "Aseprite로 만드는 픽셀 아트 모음 공간입니다.", tag: "Pixel Artwork Collection" },
+  { index: "03", title: "그림 학습 - 더보기", link: "/artstudy",summary: "그림 관련 학습에 대한 모음 공간입니다.", tag: "Art Study" },
+  { index: "04", title: "개인 일지 - 더보기", link: "/notes", summary: "일상생활에서 떠오른 이야기 모음 공간입니다.", tag: "Notes" },
+  { index: "05", title: "프론트개발 기술 모음 - 더보기", link: "/frontend", summary: "React로 만드는 프론트 개발 공간입니다.", tag: "Front End" },
+  { index: "06", title: "인터렉션 웹 기술 모음 - 더보기", link: "/motion", summary: "인터렉션 웹을 다루는 공간입니다.", tag: "Motion Web" },
+  // { index: "08", title: "앱개발 기술 - 더보기", link: "/app", summary: "앱개발을 다루는 공간입니다.", tag: "App Develop" },
+  // { index: "09", title: "게임 개발 기술 모음 - 더보기", link: "/game", summary: "HTML5로 Game을 만드는 공간입니다.", tag: "Game Develop" },
+  // { index: "10", title: "백엔드개발 기술 모음 - 더보기", link: "/backend", summary: "Node.js와 Express, DB를 공부하는 공간입니다.", tag: "Back End" },
 ];
 
 gsap.registerPlugin(ScrollTrigger);
