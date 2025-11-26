@@ -10,10 +10,10 @@ export default function Page() {
   const posts = [
     {
       slug: '3d-blender-start',
-      title: '3D 블렌더란 무엇인가?',
-      date: '2025-11-09',
-      excerpt: '블렌더에 대해 알아보자',
-      image: '/images/2d/sketch.png',
+      title: '3D 블렌더란 무엇일까요?',
+      date: '2025-11-26',
+      excerpt: '블렌더에 대해 알아봅니다',
+      image: '/images/3D/blender-start/img_blender_start.png',
       tags: ['3D', 'Blender']
     },
   ]
